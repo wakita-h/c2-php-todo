@@ -11,9 +11,19 @@ class TodoTableSeeder extends Seeder
      */
     public function run()
     {
+        for($i = 1; $i <= 10; $i++){
+            DB::table('todos')->insert([
+                'name' => "ユーザー$i",
+                'email' => "hoge+$i@test.com",
+                'password' => bcrypt('password'),
+
+                ]);
+        }
+
+
         for($i = 1; $i <= 100; $i++){
             DB::table('todos')->insert([
-                'user_id' => self::createUserIdTaskId($i),
+                'user_id' => $this->createUserIdTaskId($i),
                 'title' => "タスク$i",
                 'due_date' => date('Y-m-d'),
                 'status' => 0,
