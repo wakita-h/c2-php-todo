@@ -13,7 +13,7 @@ class TodoTableSeeder extends Seeder
     {
         for($i = 1; $i <= 100; $i++){
             DB::table('todos')->insert([
-                'title' => "タスク$i",
+                'title' => "タスク_ユーザーID_$i",
                 'due_date' => date('Y-m-d'),
                 'status' => 0,
                 'created_at' => date('Y-m-d H:i:s'),
