@@ -13,12 +13,18 @@ class TodoTableSeeder extends Seeder
     {
         for($i = 1; $i <= 100; $i++){
             DB::table('todos')->insert([
-                'title' => "タスク_ユーザーID_$i",
+                'user_id' => self::createUserIdTaskId($i),
+                'title' => "タスク$i",
                 'due_date' => date('Y-m-d'),
                 'status' => 0,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
         }
+    }
+
+    private function createUserIdTaskId(int $task_id): int
+    {
+        return ceil($task_id * 0.1);
     }
 }
