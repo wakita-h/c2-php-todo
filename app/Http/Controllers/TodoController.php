@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class TodoController extends Controller
 {
+    private const PAGE_SIZE = 5;
     /**
      * Display a listing of the resource.
      * Todo一覧を取得
