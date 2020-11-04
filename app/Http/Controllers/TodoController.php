@@ -15,7 +15,6 @@ class TodoController extends Controller
      */
     public function index()
     {
-        $todo_list = Todo::paginate(self::PAGE_SIZE);
         $todo_list = Auth::user()->todos()->paginate(self::PAGE_SIZE);
         return view('todo/index', compact('todo_list'));
     }
