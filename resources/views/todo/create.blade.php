@@ -24,7 +24,8 @@
                 <label for="due_date">期限</label>
                 <input type="text" class="form-control" name="due_date" id="due_date" required>
             </div>
-            <a href="/todo/create" class="btn btn-primary">作成</a>
+            <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+            <input class="btn btn-primary"  type="submit" name="btn" value="TODOを作成する">
         </form>
 
 </div>
