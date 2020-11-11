@@ -10,26 +10,21 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="col-md-12">
-        <h1 class="text-center text-primary py-3">TODO App</h1>
+@extends('layouts.app')
 
-        <h2 class="text-muted py-3">TODO作成</h2>
-        <form method="POST" enctype="multipart/form-data"  action="<?php print($_SERVER['PHP_SELF']) ?>">
-            <div class="form-group">
-                <label for="title">タスク名</label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="タスク名" required>
-            </div>
-            <div class="form-group">
-                <label for="due_date">期限</label>
-                <input type="text" class="form-control" name="due_date" id="due_date" required>
-            </div>
-            <input class="btn btn-primary"  type="submit" name="btn" value="TODOを作成する">
-        </form>
-        <hr>
-        <a href="/todo" class="btn btn-primary">戻る</a>
-
-</div>
+@section('content')
+    <div class="container">
+        <div class="col-md-10">
+            <h2 class="text-muted py-3">Todo 作成</h2>
+            <form action="/todo" method="POST">
+                @include('parts.todo.input')
+                <button class="btn btn-primary" type="submit">作成</button>
+            </form>
+            <hr>
+            @include('parts.button.back')
+        </div>
+    </div>
+@endsection 
 
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
