@@ -1,5 +1,3 @@
-<div>こん</div>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -16,7 +14,22 @@
     <div class="col-md-12">
         <h1 class="text-center text-primary py-3">TODO App</h1>
 
-        <h2 class="text-muted py-3">やること一覧</h2>
+        <h2 class="text-muted py-3">TODO作成</h2>
+        <form method="POST" enctype="multipart/form-data"  action="<?php print($_SERVER['PHP_SELF']) ?>">
+            <div class="form-group">
+                <label for="title">タスク名</label>
+                <input type="text" class="form-control" name="title" id="title" placeholder="タスク名" required>
+            </div>
+            <div class="form-group">
+                <label for="due_date">期限</label>
+                <input type="text" class="form-control" name="due_date" id="due_date" required>
+            </div>
+            <p>アップロード画像</p>
+            <input type="file" name="image">
+            <br><br>
+            <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+            <input class="btn btn-primary"  type="submit" name="btn" value="TODOを作成する">
+        </form>
 
 </div>
 
