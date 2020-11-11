@@ -8,7 +8,7 @@
                 @include('parts.todo.input')
                 <button class="btn btn-primary" type="submit">作成</button>
             </form>
-            <hr>
+            <hr noshade>
             @include('parts.button.back')
         </div>
     </div>
