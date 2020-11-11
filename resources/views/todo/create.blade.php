@@ -24,6 +24,7 @@
                 <label for="due_date">期限</label>
                 <input type="text" class="form-control" name="due_date" id="due_date" required>
             </div>
+            <a href="/todo/create" class="btn btn-primary">作成</a>
         </form>
 
 </div>
