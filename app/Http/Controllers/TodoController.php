@@ -27,7 +27,8 @@ class TodoController extends Controller
      */
     public function create()
     {
-        //
+        $todo_list = Auth::user()->todos()->paginate(self::PAGE_SIZE);
+        return view('todo/index', compact('todo_list'));
     }
 
     /**
