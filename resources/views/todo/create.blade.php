@@ -26,7 +26,7 @@
             </div>
             <input class="btn btn-primary"  type="submit" name="btn" value="TODOを作成する">
         </form>
-        <a href="/todo" class="line"></a>
+        <hr>
         <a href="/todo" class="btn btn-primary">戻る</a>
 
 </div>
